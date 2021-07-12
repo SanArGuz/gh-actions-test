@@ -10,7 +10,7 @@ jobs:
   secrets:
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
+      - name: Muahahaha
         env:
           TEST: ${{ secrets.TESTING }}
         run: printf "//npm.pkg.github.com/:_authToken=$TEST\nregistry=https://npm.pkg.github.com/Boardgent" > .npmrc
