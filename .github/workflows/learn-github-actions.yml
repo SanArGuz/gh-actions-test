@@ -10,6 +10,16 @@ jobs:
   secrets:
     runs-on: ubuntu-latest
     steps:
-      env:
-        TEST: ${{ secrets.TESTING }}
-      run: printf "//npm.pkg.github.com/:_authToken=$TEST\nregistry=https://npm.pkg.github.com/Boardgent" > .npmrc
+      - shell: bash
+        env:
+          TEST: ${{ secrets.TESTING }}
+        run: printf "//npm.pkg.github.com/:_authToken=$TEST\nregistry=https://npm.pkg.github.com/Boardgent" > .npmrc
+  node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "10.15.1"
+      - run: npm install
+      - run: node index.js
