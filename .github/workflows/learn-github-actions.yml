@@ -1,5 +1,5 @@
 name: learn-github-actions
-on: [push]
+on: [push, pull_request]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
@@ -26,5 +26,5 @@ jobs:
       - name: something
         run: node -v
       - name: conditional
-        if: github.ref == 'refs/heads/master'
-        run: echo is in Master
+        if: github.ref == 'refs/heads/main'
+        run: echo is in main
