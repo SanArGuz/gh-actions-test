@@ -8,8 +8,8 @@ jobs:
       - uses: actions/setup-node@v2
       - run: npm -v
   secrets:
-    runs-on: ubuntu-latest
     steps:
-      - printf "//npm.pkg.github.com/:_authToken=$TEST\nregistry=https://npm.pkg.github.com/Boardgent" > .npmrc
-    env:
-      TEST: ${{ secrets.TEST }}
+      - shell: bash
+        env:
+          TEST: ${{ secrets.TESTING }}
+        run: printf "//npm.pkg.github.com/:_authToken=$TEST\nregistry=https://npm.pkg.github.com/Boardgent" > .npmrc
