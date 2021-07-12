@@ -23,4 +23,5 @@ jobs:
           node-version: "10.15.3"
       - run: npm install
       - run: node index.js
-      - run: node -v
+      - name: something
+        run: node -v
