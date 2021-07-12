@@ -8,6 +8,7 @@ jobs:
       - uses: actions/setup-node@v2
       - run: npm -v
   secrets:
+    runs-on: ubuntu-latest
     steps:
       - shell: bash
         env:
