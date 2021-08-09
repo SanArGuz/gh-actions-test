@@ -36,3 +36,7 @@ jobs:
       - name: conditional
         if: github.ref == 'refs/heads/main'
         run: echo is in main
+  pwd:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pwd
